@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Basics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.min.js"></script>
+    <style>
+        .page2 {
+            position: relative;
+            overflow: hidden; /* Ensure the cars don't scroll outside the container */
+        }
+        .road {
+            position: relative;
+            height: 100vh; /* Ensure it takes the full viewport height */
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .hoverable {
+            display: inline-block;
+        }
+        .main {
+            overflow: hidden; /* To prevent scrollbars */
+        }
+        #car1, #car2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="page2">
+            <div class="road"> 
+                <div class="text" animate>
+                    <h2 class="hoverable" id="line1">Master the Basics</h2>
+                    <h2 class="hoverable" id="line2">of Driving</h2>
+                    <h2 class="hoverable" id="line3">Through Gameplay!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function init() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const locoScroll = new LocomotiveScroll({
+                el: document.querySelector(".main"),
+                smooth: true,
+            });
+
+            locoScroll.on("scroll", ScrollTrigger.update);
+
+            ScrollTrigger.scrollerProxy(".main", {
+                scrollTop(value) {
+                    return arguments.length
+                        ? locoScroll.scrollTo(value, 0, 0)
+                        : locoScroll.scroll.instance.scroll.y;
+                },
+                getBoundingClientRect() {
+                    return {
+                        top: 0,
+                        left: 0,
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                    };
+                },
+                pinType: document.querySelector(".main").style.transform
+                    ? "transform"
+                    : "fixed",
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+            ScrollTrigger.refresh();
+
+            // Animation for moving the car
+            
+
+            let typeSplit = new SplitType('[animate]', {
+                types: 'lines, words, chars',
+                tagName: 'span'
+            });
+
+            gsap.from('[animate] .word', {
+                y: '100%',
+                opacity: 0,
+                duration: 0.5,
+                ease: 'power1.out',
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '[animate]',
+                    start: 'top center',
+                    scroller: ".main" // Ensure ScrollTrigger uses the Locomotive Scroll container
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            init();
+        });
+    </script>
+</body>
+</html>
