@@ -1,13 +1,23 @@
 .navBar{
+<<<<<<< HEAD
   width: 70px;
   height: 70px;
   background-color: transparent;
+=======
+  width: 100vw;
+  height: 70px;
+  background-color: #000;
+>>>>>>> a31d27fc7cbd69ab2b6c37d5ae8734d687bf8ade
   /* border: 1px red solid; */
 }
 
 .toggle{
   position: relative;
+<<<<<<< HEAD
   left:95vw;
+=======
+  left:90vw;
+>>>>>>> a31d27fc7cbd69ab2b6c37d5ae8734d687bf8ade
   width: 70px;
   height: 70px;
   background: transparent;
@@ -64,7 +74,11 @@
 .menuBar{
   height: 100vh;
   width: 100vw;
+<<<<<<< HEAD
   display: none;
+=======
+  display: flex;
+>>>>>>> a31d27fc7cbd69ab2b6c37d5ae8734d687bf8ade
   justify-content: space-between;
   gap: 100px;
   position: absolute;
@@ -84,9 +98,13 @@
     height:80%;
     /* border:2px solid green; */
     background: url('./abc.jpg');
+<<<<<<< HEAD
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+=======
+    background-size: cover;
+>>>>>>> a31d27fc7cbd69ab2b6c37d5ae8734d687bf8ade
   }
 }
 
@@ -112,4 +130,11 @@
    a:hover{
     color: #ffffff;
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+>>>>>>> a31d27fc7cbd69ab2b6c37d5ae8734d687bf8ade
