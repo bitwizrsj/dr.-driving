@@ -60,7 +60,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x111111); // Set background color to black
 
 // Add the renderer to the DOM
-document.getElementById("container3D1").appendChild(renderer.domElement);
+document.getElementById("container3D").appendChild(renderer.domElement);
 
 // Set how far the camera will be from the 3D model
 camera.position.z = 10;

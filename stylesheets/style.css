@@ -325,15 +325,38 @@ html, body {
 
 
 /* page4 */
-.page4 {
-    width: 200%;
-    height: 100vh;
-    position: relative;
-    
+html, body {
+    overflow: hidden; /* Hide the default vertical scrollbar */
+    height: 100%; /* Ensure full height */
+    width: 100%; /* Ensure full width */
 }
 
-#carCanvas {
-    display: block;
+.page4 {
+    display: flex;
+    width: 200%; /* Adjust this according to the number of sections */
+    height: 100vh; /* Full viewport height */
+    position: relative;
+}
+
+.section {
+    flex: 1 0 100%; /* Ensure each section takes up the full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+#container3D, #container3D1 {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.section {
+    flex: 1 0 100%; /* Ensure each section takes up the full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+#container3D, #container3D1 {
+    width: 100vw;
+    height: 100vh;
 }
 
 
