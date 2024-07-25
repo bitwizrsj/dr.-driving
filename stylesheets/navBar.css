@@ -1,0 +1,116 @@
+.navBar{
+  width: 100vw;
+  height: 70px;
+  background-color: #000;
+  /* border: 1px red solid; */
+}
+
+.toggle{
+  position: relative;
+  left:90vw;
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  overflow: hidden;
+  background: black;
+}
+
+.toggle span{
+  position: absolute;
+  width:40px ;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 4px;
+  transition:0.5s ;
+}
+
+.toggle span:nth-child(1){
+  transform: translateY(-15px);
+  width: 25px;
+  right:15px
+}
+
+.toggle.active span:nth-child(1){
+ width: 40px;
+ transform: translateY(0px) rotate(45deg);
+}
+
+
+.toggle span:nth-child(2){
+  transform: translateY(15px);
+  width: 15px;
+  right:15px
+}
+
+.toggle.active span:nth-child(2){
+  width: 40px;
+  transform: translateY(0px) rotate(135deg);
+ }
+ 
+
+.toggle span:nth-child(3){
+  right:15px
+}
+ 
+.toggle.active span:nth-child(3){
+  transform: translateX(-60px);
+}
+
+
+/* -----MENU BAR----- */
+.menuBar{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  position: absolute;
+  background: #000000b6;
+  /* align-items: center; */
+}
+
+.menuImage{
+  width:60% ;
+  height: 80%;
+  display:flex ;
+  justify-content: center;
+  align-items: center;
+  
+  #menuImg{
+    width: 50%;
+    height:80%;
+    /* border:2px solid green; */
+    background: url('./abc.jpg');
+    background-size: cover;
+  }
+}
+
+.menuText{
+  width: 40%;
+  height: 100vh;
+  /* font-family: 'Noto Sans', sans-serif; */
+  font-family: "Nunito", sans-serif;
+  display:flex ;
+  justify-content: center;
+  align-items: center;
+
+  li{
+    color: #ffffff68;
+    list-style: decimal-leading-zero;
+  }
+
+  a{
+    color: #ffffff88;
+    text-decoration: none;
+    font-size: 50px;
+  }
+   a:hover{
+    color: #ffffff;
+  }
+}
+
+
+
