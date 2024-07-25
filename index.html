@@ -31,30 +31,90 @@
             <div class="road">
                 <img id="car1" src="./assets/car1.png" alt="Car">
                 <img id="car2" src="./assets/car2.png" alt="Car">
-                
+        
                 <div class="text word" animate>
                     <h2 class="hoverable" id="line1">Master the Basics</h2>
                     <h2 class="hoverable" id="line2">of Driving</h2>
                     <h2 class="hoverable" id="line3">Through Gameplay!</h2>
                 </div>
-                
             </div>
         </div>
-        <div class="page3"></div>
+        <div class="video">
+            <div class="inner">
+                <video autoplay loop src="./assets/trailer.mp4"></video>
+            </div>
+            
+        </div>
+        
+        <div class="page3">
+            <div class="vids">
+                <div class="default active">
+                    <div class="text word" animate>
+                        <h2 class="hoverable" id="line1">Explore Every</h2>
+                        <h2 class="hoverable" id="line2">Thrilling Mode in </h2>
+                        <h2 class="hoverable" id="line3">Dr. Driving!</h2>
+                    </div>
+                </div>
+                <div class="mod fuel">
+                    <div class="box">
+                        <div class="box-inner">
+                            <video autoplay muted loop>
+                                <source src="../assets/vd1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>Challenges</h2>
+                        <h3>Fuel</h3>
+                        <p>In this challenge, players must navigate their vehicle efficiently through city streets
+                            while managing fuel consumption. <br>The goal is to cover the maximum distance possible without
+                            running out of fuel, emphasizing careful driving and strategic fuel management.</p>
+                    </div>
+                </div>
+                <div class="mod parking">
+                    <div class="box">
+                        <div class="box-inner">
+                            <video autoplay muted loop>
+                                <source src="../assets/vd1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>Challenges</h2>
+                        <h3>Fuel</h3>
+                        <p>In this challenge, players must navigate their vehicle efficiently through city streets
+                            while managing fuel consumption. <br>The goal is to cover the maximum distance possible without
+                            running out of fuel, emphasizing careful driving and strategic fuel management.</p>
+                    </div>
+                </div>
+                <div class="modes">
+                    <div class="mode" onclick="showSection('fuel')">
+                        <img src="./assets/logo.png" alt="">
+                        <p>Fuel</p>
+                    </div>
+                    <div class="mode" onclick="showSection('parking')">
+                        <img src="./assets/logo.png" alt="">
+                        <p>Parking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            <div class="page4"></div>
+        </div>
 
-        <div class="page4"></div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./javascripts/script.js"></script>
-    <script src="./javascripts/cursor.js"></script>
-    <script src="./javascripts/gsap&locomotive.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+            integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+            integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./javascripts/script.js"></script>
+        <script src="./javascripts/cursor.js"></script>
+        <script src="./javascripts/gsap&locomotive.js"></script>
 </body>
 
 </html>

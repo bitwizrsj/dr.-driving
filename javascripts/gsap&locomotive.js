@@ -44,25 +44,58 @@ function init() {
         repeatDelay: 1,
     });
 
-    let typeSplit = new SplitType('[animate]', {
-        types: 'lines, words, chars',
-        tagName: 'span'
-    });
-
-    gsap.from('[animate] .word', {
-        y: '100%',
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power1.out',
-        stagger: 0.1,
+    // Timeline for the default section
+    gsap.timeline({
         scrollTrigger: {
-            trigger: '[animate]',
-            start: 'top center',
-            scroller: ".main" // Ensure ScrollTrigger uses the Locomotive Scroll container
+            trigger: ".default",
+            scroller: ".main",
+            start: "top center", // Starts when the top of the section is in the center of the viewport
+            toggleActions: "play none none reverse"
+        }
+    })
+    .fromTo(".default", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
+    .fromTo(".default .text h2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" });
+
+    // Timeline for the fuel section
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".fuel",
+            scroller: ".main",
+            start: "top center", // Adjust based on your layout
+            toggleActions: "play none none reverse"
+        }
+    })
+    .fromTo(".fuel", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
+    .fromTo(".fuel .text h2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" });
+
+    // Timeline for the parking section
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".parking",
+            scroller: ".main",
+            start: "top center", // Adjust based on your layout
+            toggleActions: "play none none reverse"
+        }
+    })
+    .fromTo(".parking", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
+    .fromTo(".parking .text h2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" });
+
+    // Animation timelines for text in .page2
+    var tl1 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".page2",
+            scroller: ".main",
+            start: "top top-50%", // Adjust start point based on your requirement
+            scrub: 3,
         }
     });
+
+    tl1.fromTo(".page2 #line1", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
+       .fromTo(".page2 #line2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" })
+       .fromTo(".page2 #line3", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" })
 }
 
+// Add event listener for DOMContentLoaded to initialize GSAP animations
 document.addEventListener("DOMContentLoaded", function() {
     init();
 });

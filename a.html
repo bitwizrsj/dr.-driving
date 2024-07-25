@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes border-animation-width {
+            0% { width: 0; }
+            100% { width: 402px; }
+        }
+
+        @keyframes border-animation-height {
+            0% { height: 0; }
+            100% { height: 252px; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+
+        .box {
+            width: 400px;
+            height: 250px;
+            background: #3084AC;
+            margin: auto;
+            border: 2px solid #277090;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            top: 50px;
+            cursor: pointer;
+            transition: 500ms ease;
+        }
+
+        .box:before,
+        .box:after,
+        .box-inner:after,
+        .box-inner:before {
+            position: absolute;
+            content: '';
+            background: #fff;
+            transition: 100ms ease;
+        }
+
+        .box:before {
+            width: 0;
+            height: 2px;
+            top: -2px;
+            left: -2px;
+            animation: border-animation-width 300ms ease;
+        }
+
+        .box:after {
+            width: 2px;
+            height: 0;
+            top: -2px;
+            right: -2px;
+            animation: border-animation-height 200ms ease;
+        }
+
+        .box-inner:after {
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            right: -2px;
+            animation: border-animation-width 100ms ease;
+        }
+
+        .box-inner:before {
+            width: 2px;
+            height: 0;
+            bottom: -2px;
+            left: -2px;
+            animation: border-animation-height 0ms ease;
+        }
+
+        .box:hover {
+            border-color: transparent;
+            background: #246387;
+        }
+
+        .box:hover:before {
+            width: 402px;
+            animation: border-animation-width 0ms ease;
+        }
+
+        .box:hover:after {
+            height: 252px;
+            animation: border-animation-height 100ms ease;
+        }
+
+        .box:hover .box-inner:after {
+            width: 402px;
+            animation: border-animation-width 200ms ease;
+        }
+
+        .box:hover .box-inner:before {
+            height: 252px;
+            animation: border-animation-height 300ms ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-inner"></div>
+    </div>
+</body>
+</html>
