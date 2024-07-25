@@ -30,7 +30,7 @@ function init() {
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
 
-    // Animation for moving the car
+    // Animation for moving the car horizontally
     gsap.to("#car1", {
         x: "100vw",
         duration: 8,
@@ -49,7 +49,7 @@ function init() {
         scrollTrigger: {
             trigger: ".default",
             scroller: ".main",
-            start: "top center", // Starts when the top of the section is in the center of the viewport
+            start: "top center",
             toggleActions: "play none none reverse"
         }
     })
@@ -61,7 +61,7 @@ function init() {
         scrollTrigger: {
             trigger: ".fuel",
             scroller: ".main",
-            start: "top center", // Adjust based on your layout
+            start: "top center",
             toggleActions: "play none none reverse"
         }
     })
@@ -73,7 +73,7 @@ function init() {
         scrollTrigger: {
             trigger: ".parking",
             scroller: ".main",
-            start: "top center", // Adjust based on your layout
+            start: "top center",
             toggleActions: "play none none reverse"
         }
     })
@@ -85,14 +85,47 @@ function init() {
         scrollTrigger: {
             trigger: ".page2",
             scroller: ".main",
-            start: "top top-50%", // Adjust start point based on your requirement
+            start: "top top-50%",
             scrub: 3,
         }
     });
 
     tl1.fromTo(".page2 #line1", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
        .fromTo(".page2 #line2", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" })
-       .fromTo(".page2 #line3", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" })
+       .fromTo(".page2 #line3", { x: -50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.3, duration: 1, ease: "power2.out" });
+
+    // Car movement with scroll, including U-turn on scroll up
+    let lastScrollTop = 0;
+
+    ScrollTrigger.create({
+        trigger: ".road2",
+        scroller: ".main",
+        start: "top top",
+        end: "bottom bottom",
+        onUpdate: self => {
+            let currentScrollTop = self.scroll();
+
+            // Check if scrolling up
+            if (currentScrollTop < lastScrollTop) {
+                gsap.to("#car3", {
+                    y: self.progress * 180 + "vh", // Adjust as needed
+                    x: "-45px",
+                    rotate: 270,
+                    ease: "none",
+                });
+            } else {
+                gsap.to("#car3", {
+                    y: self.progress * 180 + "vh", // Adjust as needed
+                    x: "0px",
+                    rotate: 90,
+                    ease: "none",
+                });
+            }
+
+            lastScrollTop = currentScrollTop;
+        },
+        scrub: true,
+    });
 }
 
 // Add event listener for DOMContentLoaded to initialize GSAP animations
