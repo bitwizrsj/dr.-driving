@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/navBar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <title>Dr. Driving</title>
 </head>
@@ -26,40 +27,72 @@
     </div>
 
     <div class="main">
-        <div class="page1"></div>
+
+        
+
+        <div class="page1">
+            <div class="navBar">
+                <!-- menu button -->
+                <div class="toggle" onclick="showMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+    
+            <div class="menuBar" id="menuBar">
+                <!-- menu Image -->
+                <div class="menuImage">
+                    <div id="menuImg"></div>
+                </div>
+                <!-- menu List -->
+                <div class="menuText">
+                    <ul>
+                        <li id="item"><a href="#">Home</a></li>
+                        <li id="item"><a href="#">Play</a></li>
+                        <li id="item"><a href="#">Garage</a></li>
+                        <li id="item"><a href="#">Setting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="page2">
             <div class="road">
                 <img id="car1" src="./assets/car1.png" alt="Car">
                 <img id="car2" src="./assets/car2.png" alt="Car">
-        
+
                 <div class="text word" animate>
                     <h2 class="hoverable" id="line1">Master the Basics</h2>
                     <h2 class="hoverable" id="line2">of Driving</h2>
                     <h2 class="hoverable" id="line3">Through Gameplay!</h2>
                 </div>
             </div>
+            <div class="road2">
+                <img id="car3" src="./assets/car3.png" alt="Car">
+            </div>
         </div>
         <div class="video">
             <div class="inner">
-                <video autoplay loop src="./assets/trailer.mp4"></video>
+                <video autoplay loop muted src="./assets/trailer.mp4"></video>
             </div>
-            
+
         </div>
-        
+
         <div class="page3">
             <div class="vids">
                 <div class="default active">
                     <div class="text word" animate>
                         <h2 class="hoverable" id="line1">Explore Every</h2>
-                        <h2 class="hoverable" id="line2">Thrilling Mode in </h2>
+                        <h2 class="hoverable" id="line2">Thrilling Mode in</h2>
                         <h2 class="hoverable" id="line3">Dr. Driving!</h2>
                     </div>
                 </div>
+
                 <div class="mod fuel">
                     <div class="box">
                         <div class="box-inner">
                             <video autoplay muted loop>
-                                <source src="../assets/vd1.mp4" type="video/mp4">
+                                <source src="../assets/vd1.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -67,54 +100,186 @@
                     <div class="text">
                         <h2>Challenges</h2>
                         <h3>Fuel</h3>
-                        <p>In this challenge, players must navigate their vehicle efficiently through city streets
-                            while managing fuel consumption. <br>The goal is to cover the maximum distance possible without
-                            running out of fuel, emphasizing careful driving and strategic fuel management.</p>
+                        <p>
+                            In this challenge, players must navigate their vehicle
+                            efficiently through city streets while managing fuel
+                            consumption. <br />The goal is to cover the maximum distance
+                            possible without running out of fuel, emphasizing careful
+                            driving and strategic fuel management.
+                        </p>
                     </div>
                 </div>
+
                 <div class="mod parking">
                     <div class="box">
                         <div class="box-inner">
                             <video autoplay muted loop>
-                                <source src="../assets/vd1.mp4" type="video/mp4">
+                                <source src="../assets/vd2.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
                     </div>
                     <div class="text">
                         <h2>Challenges</h2>
-                        <h3>Fuel</h3>
-                        <p>In this challenge, players must navigate their vehicle efficiently through city streets
-                            while managing fuel consumption. <br>The goal is to cover the maximum distance possible without
-                            running out of fuel, emphasizing careful driving and strategic fuel management.</p>
+                        <h3>Parking</h3>
+                        <p>
+                            In this challenge, players must navigate their vehicle into
+                            designated parking spots with precision and accuracy. The
+                            parking mode tests careful maneuvering and understanding of the
+                            car's dimensions.<br />
+                            The goal is to park correctly within the time limit, emphasizing
+                            patience, practice, and strategic planning. This mode enhances
+                            players' driving skills in the game's urban environment
+                        </p>
                     </div>
                 </div>
+
+                <div class="mod brokenBrake">
+                    <div class="box">
+                        <div class="box-inner">
+                            <video autoplay muted loop>
+                                <source src="../assets/vd3.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>Challenges</h2>
+                        <h3>Broken Brake</h3>
+                        <p>
+                            In the Broken Brake mode, players must navigate their vehicle
+                            through city streets without the ability to use brakes. This
+                            challenge tests players' skills in controlling speed, avoiding
+                            collisions, and strategically using the car's momentum. <br />
+                            The goal is to drive as far as possible without crashing,
+                            emphasizing quick reflexes and careful planning. This mode
+                            offers a thrilling and intense driving experience, pushing
+                            players to their limits in managing a runaway vehicle
+                        </p>
+                    </div>
+                </div>
+                <div class="mod truck">
+                    <div class="box">
+                        <div class="box-inner">
+                            <video autoplay muted loop>
+                                <source src="../assets/vd4.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>Challenges</h2>
+                        <h3>Truck</h3>
+                        <p>
+                            In Truck Mode, players must navigate larger, more cumbersome
+                            vehicles through city streets and tight spaces. This challenge
+                            tests players' skills in handling the slower acceleration, wider
+                            turns, and greater size of trucks compared to regular cars.
+                            <br />
+                            The goal is to complete tasks like delivering goods or parking
+                            without causing accidents, emphasizing precision and careful
+                            planning. This mode offers a unique driving experience,
+                            enhancing players' abilities to manage different vehicle
+                            dynamics within the game.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mod lane">
+                    <div class="box">
+                        <div class="box-inner">
+                            <video autoplay muted loop>
+                                <source src="../assets/vd5.mp4" type="video/mp4" muted />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>Challenges</h2>
+                        <h3>Lane</h3>
+                        <p>
+                            In Lane Mode, players navigate their vehicle within specific
+                            lanes, avoiding collisions and adapting to traffic conditions.
+                            The goal is to drive safely and efficiently while managing lane
+                            changes and obstacles, testing spatial awareness and precision.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mod highway">
+                    <div class="box">
+                        <div class="box-inner">
+                            <video autoplay muted loop>
+                                <source src="../assets/vd6.mp4" type="video/mp4" muted />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>Challenges</h2>
+                        <h3>Highway</h3>
+                        <p>
+                            In Highway Mode, players drive at high speeds on expansive
+                            highways, focusing on lane management and overtaking other
+                            vehicles. The challenge is to maintain control and avoid
+                            collisions while navigating through fast-moving traffic. <br /> The
+                            goal is to cover the longest distance safely and efficiently,
+                            testing speed management and driving skills
+                        </p>
+                    </div>
+                </div>
+
                 <div class="modes">
                     <div class="mode" onclick="showSection('fuel')">
-                        <img src="./assets/logo.png" alt="">
+                        <img src="./assets/fuel.png" alt="" />
                         <p>Fuel</p>
                     </div>
+
                     <div class="mode" onclick="showSection('parking')">
-                        <img src="./assets/logo.png" alt="">
+                        <img src="./assets/parking.png" alt="" />
                         <p>Parking</p>
+                    </div>
+                    <div class="mode" onclick="showSection('brokenBrake')">
+                        <img src="./assets/brake.jpg" alt="" />
+                        <p>Broken Brake</p>
+                    </div>
+                    <div class="mode" onclick="showSection('truck')">
+                        <img src="./assets/truck.png" alt="" />
+                        <p>Truck</p>
+                    </div>
+                    <div class="mode" onclick="showSection('lane')">
+                        <img src="./assets/lane.png" alt="" />
+                        <p>Lane</p>
+                    </div>
+                    <div class="mode" onclick="showSection('highway')">
+                        <img src="./assets/highway.png" alt="" />
+                        <p>Highway</p>
                     </div>
                 </div>
             </div>
         </div>
-            
-            <div class="page4"></div>
+
+        <div class="page4">
+            <div id="container3D"></div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-            integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-            integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="./javascripts/script.js"></script>
-        <script src="./javascripts/cursor.js"></script>
-        <script src="./javascripts/gsap&locomotive.js"></script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./javascripts/script.js"></script>
+    <script src="./javascripts/cursor.js"></script>
+    <script src="./javascripts/gsap&locomotive.js"></script>
+    <script src="./javascripts/3js.js"></script>
+    <script src="./javascripts/navBar.js"></script>
+    <script type="module" src="./javascripts/3js.js"></script>
 </body>
 
 </html>
